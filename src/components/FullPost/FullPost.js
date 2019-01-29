@@ -7,16 +7,23 @@ class FullPost extends Component {
 		post: {}
 	};
 
+	id = this.props.match.params.id;
 
 	componentDidMount() {
-		axios.get('/posts/' + this.props.match.params.id + '.json').then(response => {;
+		axios.get('/posts/' + this.id + '.json').then(response => {
 			this.setState({post: response.data})
 		})
 	}
 
+	goToEditPost = () => {
+		this.props.history.push({
+			pathname: '/posts/' + this.id + '/edit'
+		})
+	};
+
 	deletePost = () => {
 		if (window.confirm('Are you sure?')) {
-			axios.delete('/posts/' + this.props.match.params.id + '.json').finally(() => {
+			axios.delete('/posts/' + this.id + '.json').finally(() => {
 				this.props.history.push('/');
 			});
 		}
@@ -33,7 +40,7 @@ class FullPost extends Component {
 					content={this.state.post.content}
 					buttons={
 						[
-							{type: 'secondary', label: 'Edit', clicked: () => {console.log('Edit')}},
+							{type: 'secondary', label: 'Edit', clicked: () => {this.goToEditPost()}},
 							{type: 'danger', label: 'Delete', clicked: () => {this.deletePost()}}
 						]
 					}

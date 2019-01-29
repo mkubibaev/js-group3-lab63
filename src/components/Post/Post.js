@@ -25,8 +25,6 @@ const Post = props => {
 						clicked={button.clicked}
 					/>
 				))}
-
-				{/*<button type="button" onClick={props.clicked} className="btn btn-info">Read more</button>*/}
 			</div>
 		</div>
 	);

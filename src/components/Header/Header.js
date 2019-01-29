@@ -9,7 +9,7 @@ const Header = props => {
                     <NavLink to="/" className="logo">My Blog</NavLink>
                     <ul className="nav">
                         <li><NavLink to="/" exact>Home</NavLink></li>
-                        <li><NavLink to="/add">Add</NavLink></li>
+                        <li><NavLink to="/posts/add">Add</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/contacts">Contacts</NavLink></li>
                     </ul>
