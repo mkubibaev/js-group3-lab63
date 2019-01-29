@@ -21,9 +21,13 @@ class Blog extends Component {
 		}).catch(error => {
 			console.log(error);
 		})
-
     }
 
+    showFullPost = id => {
+		this.props.history.push({
+			pathname: '/post/' + id
+		})
+    };
 
     render() {
         return (
@@ -34,6 +38,7 @@ class Blog extends Component {
                             key={post.id}
                             title={post.title}
                             datetime={post.datetime}
+                            clicked={() => this.showFullPost(post.id)}
                         />
                     ))}
 				</div>
