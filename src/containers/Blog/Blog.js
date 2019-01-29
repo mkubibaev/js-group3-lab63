@@ -25,7 +25,7 @@ class Blog extends Component {
 
     showFullPost = id => {
 		this.props.history.push({
-			pathname: '/post/' + id
+			pathname: '/posts/' + id
 		})
     };
 
@@ -38,7 +38,11 @@ class Blog extends Component {
                             key={post.id}
                             title={post.title}
                             datetime={post.datetime}
-                            clicked={() => this.showFullPost(post.id)}
+							buttons={
+							    [
+									{type: 'info', label: 'Read more', clicked: () => {this.showFullPost(post.id)}}
+								]
+							}
                         />
                     ))}
 				</div>

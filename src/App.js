@@ -14,7 +14,7 @@ class App extends Component {
                     <Switch>
                         <Route path='/' exact component={Blog}/>
                         <Route path='/add' component={Add}/>
-                        <Route path='/post/:id' component={FullPost}/>
+                        <Route path='/posts/:id' component={FullPost}/>
                     </Switch>
                 </Fragment>
             </BrowserRouter>
