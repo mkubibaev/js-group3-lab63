@@ -5,7 +5,9 @@ import PostForm from "../PostForm/PostForm";
 class Edit extends Component {
 	state = {
 		title: '',
-		content: ''
+		content: '',
+		created: '',
+		updated: ''
 	};
 
 	id = this.props.match.params.id;
@@ -15,7 +17,8 @@ class Edit extends Component {
 		axios.get('/posts/' + this.id + '.json' ).then(response => {
 			this.setState({
 				title:  response.data.title,
-				content: response.data.content
+				content: response.data.content,
+				created: response.data.created
 			})
 		})
 	}
@@ -28,7 +31,11 @@ class Edit extends Component {
 	editPost = event => {
 		event.preventDefault();
 
-		axios.put('/posts/' + this.id + '.json', this.state).finally(() => {
+		const editedPost = {...this.state};
+		editedPost.updated = new Date().toISOString();
+
+
+		axios.put('/posts/' + this.id + '.json', editedPost).finally(() => {
 			this.props.history.push('/');
 		});
 	};

@@ -19,11 +19,11 @@ class Add extends Component {
 
 		if (this.state.title !== '' && this.state.content !== '') {
 
-			const date = new Date();
 			const post = {
 				title: this.state.title,
 				content: this.state.content,
-				datetime: date.toISOString(),
+				created: new Date().toISOString(),
+				updated: null
 			};
 
 			axios.post('/posts.json', post).then(() => {

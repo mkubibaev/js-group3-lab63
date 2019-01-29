@@ -37,7 +37,8 @@ class Blog extends Component {
                         <Post
                             key={post.id}
                             title={post.title}
-                            datetime={post.datetime}
+                            created={post.created}
+							updated={post.updated}
 							buttons={
 							    [
 									{type: 'info', label: 'Read more', clicked: () => {this.showFullPost(post.id)}}

@@ -36,7 +36,8 @@ class FullPost extends Component {
 			<div className="container py-3">
 				<Post
 					title={this.state.post.title}
-					datetime={this.state.post.datetime}
+					created={this.state.post.created}
+					updated={this.state.post.updated}
 					content={this.state.post.content}
 					buttons={
 						[
