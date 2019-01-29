@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from '../../axios-posts';
+import PostForm from "../PostForm/PostForm";
 
 class Edit extends Component {
 	state = {
@@ -27,10 +28,7 @@ class Edit extends Component {
 	editPost = event => {
 		event.preventDefault();
 
-		const post = {...this.state};
-		console.log(post);
-
-		axios.put('/posts/' + this.id + '.json', post).finally(() => {
+		axios.put('/posts/' + this.id + '.json', this.state).finally(() => {
 			this.props.history.push('/');
 		});
 	};
@@ -39,28 +37,12 @@ class Edit extends Component {
 		return (
 			<div className="container py-3">
 				<h3 className="text-center mb-3">Edit post</h3>
-				<form onSubmit={this.editPost}>
-					<div className="form-group mb-3">
-						<label>Post title:</label>
-						<input type="text"
-							   className="form-control"
-							   name="title"
-							   value={this.state.title}
-							   onChange={this.valueChanged}
-						/>
-					</div>
-					<div className="form-group">
-						<label>Post content:</label>
-						<textarea className="form-control"
-								  name="content"
-								  value={this.state.content}
-								  onChange={this.valueChanged}
-						/>
-					</div>
-					<div className="form-group text-right">
-						<button type="submit" className="btn btn-info">Save</button>
-					</div>
-				</form>
+				<PostForm
+					submited={this.editPost}
+					title={this.state.title}
+					content={this.state.content}
+					changed={this.valueChanged}
+				/>
 			</div>
 		);
 	}

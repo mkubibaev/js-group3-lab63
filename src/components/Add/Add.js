@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from '../../axios-posts';
+import PostForm from "../PostForm/PostForm";
 
 class Add extends Component {
 
@@ -40,28 +41,12 @@ class Add extends Component {
 		return (
 			<div className="container py-3">
 				<h3 className="text-center mb-3">Add new post</h3>
-				<form onSubmit={this.addPost}>
-					<div className="form-group mb-3">
-						<label>Post title:</label>
-						<input type="text"
-                               className="form-control"
-                               name="title"
-							   value={this.state.title}
-                               onChange={this.valueChanged}
-                        />
-					</div>
-					<div className="form-group">
-						<label>Post content:</label>
-						<textarea className="form-control"
-                                  name="content"
-                                  value={this.state.content}
-                                  onChange={this.valueChanged}
-                        />
-					</div>
-					<div className="form-group text-right">
-						<button type="submit" className="btn btn-info">Save</button>
-					</div>
-				</form>
+				<PostForm
+					submited={this.addPost}
+					title={this.state.title}
+					content={this.state.content}
+					changed={this.valueChanged}
+				/>
 			</div>
 		);
     }
