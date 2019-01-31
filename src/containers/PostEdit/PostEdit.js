@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from '../../axios-posts';
-import PostForm from "../PostForm/PostForm";
+import PostForm from "../../components/PostForm/PostForm";
 
-class Edit extends Component {
+class PostEdit extends Component {
 	state = {
 		title: '',
 		content: '',
@@ -55,4 +55,4 @@ class Edit extends Component {
 	}
 }
 
-export default Edit;
+export default PostEdit;

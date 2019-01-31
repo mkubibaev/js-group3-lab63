@@ -12,8 +12,6 @@ const Post = props => {
 	}
 
 	return (
-
-
 		<div className="card">
 			<div className="card-header">
 				<div>Created on: {formattedCreateDate}</div>

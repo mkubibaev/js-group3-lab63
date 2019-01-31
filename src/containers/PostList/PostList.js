@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import axios from '../../axios-posts';
 import Post from "../../components/Post/Post";
 
-class Blog extends Component {
+class PostList extends Component {
 
     state = {
         posts: []
@@ -52,4 +52,4 @@ class Blog extends Component {
     }
 }
 
-export default Blog;
+export default PostList;

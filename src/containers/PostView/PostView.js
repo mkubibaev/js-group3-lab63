@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from '../../axios-posts';
-import Post from "../Post/Post";
+import Post from "../../components/Post/Post";
 
-class FullPost extends Component {
+class PostView extends Component {
 	state = {
 		post: {}
 	};
@@ -31,7 +31,6 @@ class FullPost extends Component {
 	};
 
 	render() {
-
 		return (
 			<div className="container py-3">
 				<Post
@@ -52,4 +51,4 @@ class FullPost extends Component {
 
 };
 
-export default FullPost;
+export default PostView;

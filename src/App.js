@@ -1,12 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import Blog from "./containers/Blog/Blog";
-import Add from "./components/Add/Add";
+import PostList from "./containers/PostList/PostList";
+import PostAdd from "./containers/PostAdd/PostAdd";
 import Header from "./components/Header/Header";
-import FullPost from "./components/FullPost/FullPost";
-import Edit from "./components/Edit/Edit";
-import About from "./components/About/About";
-import Contacts from "./components/Contacts/Contacts";
+import PostView from "./containers/PostView/PostView";
+import PostEdit from "./containers/PostEdit/PostEdit";
+import AboutView from "./containers/AboutView/AboutView";
+import AboutEdit from "./containers/AboutEdit/AboutEdit";
+import ContactsView from "./containers/ContactsView/ContactsView";
+import ContactsEdit from "./containers/ContactsEdit/ContactsEdit";
 
 class App extends Component {
     render() {
@@ -15,12 +17,14 @@ class App extends Component {
                 <Fragment>
                     <Header/>
                     <Switch>
-                        <Route path='/' exact component={Blog}/>
-                        <Route path='/about' component={About}/>
-                        <Route path='/contacts' component={Contacts}/>
-                        <Route path='/posts/add' component={Add}/>
-                        <Route path='/posts/:id' exact component={FullPost}/>
-                        <Route path='/posts/:id/edit' component={Edit}/>
+                        <Route path='/' exact component={PostList}/>
+                        <Route path='/about' exact component={AboutView}/>
+                        <Route path='/about/edit' component={AboutEdit}/>
+                        <Route path='/contacts' exact component={ContactsView}/>
+                        <Route path='/contacts/edit' component={ContactsEdit}/>
+                        <Route path='/posts/add' component={PostAdd}/>
+                        <Route path='/posts/:id' exact component={PostView}/>
+                        <Route path='/posts/:id/edit' component={PostEdit}/>
                     </Switch>
                 </Fragment>
             </BrowserRouter>

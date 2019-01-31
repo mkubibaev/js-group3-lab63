@@ -1,16 +1,15 @@
 import React from 'react';
 
-const Contacts = () => {
+const Contacts = props => {
     return (
         <div className='container'>
             <h3 className='my-3'>Contacts</h3>
-            <ul>
-                <li>720000, Kyrgyz Republic, Bishkek City</li>
-                <li>120 Chui avenue</li>
-                <li>Phone:  +996 312 00 00 00</li>
-                <li>Cell phone: +996 555 55 55 55</li>
-                <li>E-mail: blog@gmail.com</li>
-            </ul>
+            <p>{props.address}</p>
+            <p>{props.email}</p>
+            <p>{props.phone}</p>
+            <div className="text-right">
+                <button onClick={props.clicked} type="button" className="btn btn-info">Edit</button>
+            </div>
         </div>
     );
 };
