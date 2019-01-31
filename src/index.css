@@ -65,3 +65,7 @@ body {
 .btn {
     margin-right: 5px;
 }
+
+textarea {
+    min-height: 180px;
+}

@@ -11,10 +11,7 @@ class ContactsEdit extends Component {
     };
 
     componentDidMount () {
-        console.log(this.state);
-
         axios.get('/contacts.json' ).then(response => {
-            console.log(response);
             this.setState({
                 address:  response.data.address,
                 phone: response.data.phone,
@@ -30,14 +27,11 @@ class ContactsEdit extends Component {
 
     editContacts = event => {
         event.preventDefault();
-        const newContactsText = this.state;
 
-        axios.put('/contacts.json', newContactsText).finally(() => {
+        axios.put('/contacts.json', this.state).finally(() => {
             this.props.history.push('/contacts');
         });
-
     };
-
 
     render() {
         return (

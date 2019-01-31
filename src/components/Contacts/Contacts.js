@@ -7,7 +7,7 @@ const Contacts = props => {
             <p>{props.address}</p>
             <p>{props.email}</p>
             <p>{props.phone}</p>
-            <div className="text-right">
+            <div className="form-group">
                 <button onClick={props.clicked} type="button" className="btn btn-info">Edit</button>
             </div>
         </div>

@@ -5,14 +5,15 @@ import axios from "../../axios-posts";
 class ContactsView extends Component {
 
     state = {
-          contacts: {}
+		address: '',
+		phone: '',
+		email: ''
     };
 
     componentDidMount() {
-        console.log(this.state);
-
         axios.get('/contacts.json').then(response => {
-            this.setState({contacts: response.data})
+			const {address, phone, email} = response.data;
+            this.setState({address, phone, email})
         }).catch(error => {
             console.log(error);
         })
@@ -27,9 +28,9 @@ class ContactsView extends Component {
     render() {
         return (
             <Contacts
-                address={this.state.contacts.address}
-                phone={this.state.contacts.phone}
-                email={this.state.contacts.email}
+                address={this.state.address}
+                phone={this.state.phone}
+                email={this.state.email}
                 clicked={this.goToEditContacts}
             />
         );

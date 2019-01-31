@@ -5,7 +5,7 @@ const About = props => {
         <div className='container'>
             <h3 className='my-3 text-center'>About blog</h3>
             <p>{props.text}</p>
-            <div className="text-right">
+            <div className="form-group">
                 <button onClick={props.editLink} type="button" className="btn btn-info">Edit</button>
             </div>
         </div>
