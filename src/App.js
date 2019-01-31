@@ -5,6 +5,8 @@ import Add from "./components/Add/Add";
 import Header from "./components/Header/Header";
 import FullPost from "./components/FullPost/FullPost";
 import Edit from "./components/Edit/Edit";
+import About from "./components/About/About";
+import Contacts from "./components/Contacts/Contacts";
 
 class App extends Component {
     render() {
@@ -14,6 +16,8 @@ class App extends Component {
                     <Header/>
                     <Switch>
                         <Route path='/' exact component={Blog}/>
+                        <Route path='/about' component={About}/>
+                        <Route path='/contacts' component={Contacts}/>
                         <Route path='/posts/add' component={Add}/>
                         <Route path='/posts/:id' exact component={FullPost}/>
                         <Route path='/posts/:id/edit' component={Edit}/>
